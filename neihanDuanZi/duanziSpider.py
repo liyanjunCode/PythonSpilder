@@ -26,14 +26,14 @@ class Spilder:
         # 调用处理每页的函数
         self.dealPage(response)
 
-    def dealPage(self,response):
+    def dealPage(self, response):
         """
             处理每页段子
         :param response: 传入的每页数据
         :return:
         """
         # 正则匹配每段段子
-        pattern = re.compile(r'<div\sclass="desc">(.*?)</div>', re.S)
+        pattern = re.compile(r'<div\s class="desc">(.*?)</div>', re.S)
         txts = pattern.findall(response)
         # 每段段子传入写文件函数
         for content in txts:
